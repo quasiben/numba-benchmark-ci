@@ -30,7 +30,7 @@
 
     // List of branches to benchmark. If not provided, defaults to "master"
     // (for git) or "default" (for mercurial).
-    // "branches": ["master"], // for git
+    "branches": ["master"], // for git
     // "branches": ["default"],    // for mercurial
 
     // The DVCS being used.  If not set, it will be automatically
@@ -59,7 +59,7 @@
 
     // The list of conda channel names to be searched for benchmark
     // dependency packages in the specified order
-    // "conda_channels": ["conda-forge", "defaults"],
+    "conda_channels": ["conda-forge", "numba/label/dev"],
 
     // The matrix of dependencies to test.  Each key is the name of a
     // package (in PyPI) and the values are version numbers.  An empty
@@ -73,8 +73,8 @@
     //
     "matrix": {
         "numpy": [],
-        "llvmlite": [],
-        "cudatoolkit": ["10.2"],
+        "llvmlite": ["0.39.0dev0"],
+        "cudatoolkit": ["11.2"],
     },
 
     // Combinations of libraries/python versions can be excluded/included
