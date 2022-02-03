@@ -74,7 +74,7 @@
     "matrix": {
         "numpy": [],
         "llvmlite": ["0.39.0dev0"],
-        "cudatoolkit": ["11.2"],
+        "cudatoolkit": ["11.5"],
     },
 
     // Combinations of libraries/python versions can be excluded/included
