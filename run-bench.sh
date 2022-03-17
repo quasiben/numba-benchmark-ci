@@ -6,12 +6,13 @@ COMMIT_MSG=`date +"%Y%m%d new results"`
 SRC_DIR=/datasets/bzaitlen/GitRepos/numba-benchmark-ci
 LOG_FILE_PATH=$SRC_DIR/logs/${FILE}
 cd $SRC_DIR
+conda activate numba-0.47
 
-#asv run NEW --launch-method spawn > $FILE_PATH 2>&1
-#git add $SRC_DIR/results/*
-#git commit -m "$COMMIT_MSG"
+/datasets/bzaitlen/miniconda3/envs/numba-0.47/bin/asv run NEW --launch-method spawn > ${LOG_FILE_PATH} 2>&1
+git add $SRC_DIR/results/*
+git commit -m "$COMMIT_MSG"
 
-#asv publish
+asv publish
 echo "Copying HTML Data..."
 cd ../numba-benchmark-ci-gh-pages
 cp -r ../numba-benchmark-ci/html/* .
@@ -23,5 +24,4 @@ echo "Publishing Results..."
 git push origin gh-pages
 cd -
 
-#source ~/env-vars.txt
-#python publish-results.txt
+date
